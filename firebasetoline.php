@@ -3,19 +3,18 @@
 include ('verdor/firebase-php/src/Firebase.php');
 
 $firebase = Firebase::fromServiceAccount('helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
-$tokenHandler = $firebase->getTokenHandler();
+$database = $firebase->getDatabase();
 
-$uid = 'a-uid';
-$claims = ['foo' => 'bar']; // optional
+$newPost = $database
+    ->getReference('blog/posts')
+    ->push([
+        'title' => 'Post title',
+        'body' => 'This should probably be longer.'
+    ]);
 
-// Returns a Lcobucci\JWT\Token instance
-$customToken = $tokenHandler->createCustomToken($uid, $claims);
-echo $token; // "eyJ0eXAiOiJKV1..."
+$newPost->getKey(); // => -KVr5eu8gcTv7_AHb-3-
+$newPost->getUri(); // => https://my-project.firebaseio.com/blog/posts/-KVr5eu8gcTv7_AHb-3-
 
-$idTokenString = $token;
-// Returns a Lcobucci\JWT\Token instance
-$idToken = $tokenHandler->verifyIdToken($idTokenString);
-
-$uid = $idToken->getClaim('sub');
-
-echo $uid; // 'a-uid'
+$newPost->getChild('title')->set('Changed post title');
+$newPost->getValue(); // Fetches the data from the realtime database
+$newPost->remove();
