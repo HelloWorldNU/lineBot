@@ -2,7 +2,7 @@
 
 include ('vendor/autoload.php');
 
-$firebase = Firebase::fromServiceAccount(__DIR__.'/helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
+$firebase = Firebase::fromServiceAccount('lineBot/helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
 $database = $firebase->getDatabase();
 
 $newPost = $database
