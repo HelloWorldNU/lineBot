@@ -4,9 +4,9 @@ include ('vendor/autoload.php');
 echo "5555";
 $secret = 'aeogVO99vj4QgwyUcR6QXl4OaPEnPB9izi9d9PCa';
 $databaseUri = 'https://helloworld-48dff.firebaseio.com';
-echo "5555";
+echo "444";
 $firebase = Firebase::fromDatabaseUriAndSecret($databaseUri, $secret);
-echo "5555";
+echo "3333";
 $database = $firebase->getDatabase();
 echo $database;
 
