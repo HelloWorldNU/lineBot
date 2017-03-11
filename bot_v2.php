@@ -2,20 +2,6 @@
 
 include ('line-bot.php');
 
-
-<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAuz1ICCDhvX70gjOJPoPo0fMZfiav2fqc",
-    authDomain: "helloworld-48dff.firebaseapp.com",
-    databaseURL: "https://helloworld-48dff.firebaseio.com",
-    storageBucket: "helloworld-48dff.appspot.com",
-    messagingSenderId: "391050066910"
-  };
-  firebase.initializeApp(config);
-</script>
-
 const DEFAULT_URL = 'https://helloworld-48dff.firebaseio.com';
 const DEFAULT_TOKEN = 'AIzaSyAuz1ICCDhvX70gjOJPoPo0fMZfiav2fqc';
 const DEFAULT_PATH = '/firebase/line';
