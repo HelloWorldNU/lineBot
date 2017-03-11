@@ -2,25 +2,21 @@
 
 include ('vendor/autoload.php');
 
-  const DEFAULT_URL = 'https://helloworld-48dff.firebaseio.com';
-  const DEFAULT_TOKEN = 'AIzaSyAuz1ICCDhvX70gjOJPoPo0fMZfiav2fqc';
-  const DEFAULT_PATH = '/firebase/line';
+$firebase = Firebase::fromServiceAccount(__DIR__.'/helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
+$database = $firebase->getDatabase();
 
-  $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+$newPost = $database
+  ->getReference('blog/posts')
+  ->push([
+      'title' => 'Post title',
+      'body' => 'This should probably be longer.'
+  ]);
 
-  // --- storing an array ---
-  $test = array(
-      "foo" => "bar",
-      "i_love" => "lamp",
-      "id" => 42
-  );
-  $dateTime = new DateTime();
-  $firebase->set(DEFAULT_PATH . '/' . $dateTime->format('c'), $test);
+$newPost->getKey(); // => -KVr5eu8gcTv7_AHb-3-
+$newPost->getUri(); // => https://my-project.firebaseio.com/blog/posts/-KVr5eu8gcTv7_AHb-3-
 
-  // --- storing a string ---
-  $firebase->set(DEFAULT_PATH . '/name/contact001', "John Doe");
+$newPost->getChild('title')->set('Changed post title');
+$newPost->getValue(); // Fetches the data from the realtime database
+$newPost->remove();
 
-  // --- reading the stored string ---
-  $name = $firebase->get(DEFAULT_PATH . '/name/contact001');
-
-echo $name;
+//echo $name;
