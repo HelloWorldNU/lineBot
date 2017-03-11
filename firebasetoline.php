@@ -1,6 +1,6 @@
 <?php
 
-include ('verdor/firebase-php/src/Firebase.php');
+include ('vendor/autoload.php');
    
 $secret = 'aeogVO99vj4QgwyUcR6QXl4OaPEnPB9izi9d9PCa';
 $databaseUri = 'https://helloworld-48dff.firebaseio.com';
