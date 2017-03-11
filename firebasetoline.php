@@ -2,6 +2,8 @@
 
 include ('vendor/autoload.php');
 
+use Firebase\;
+
 $firebase = Firebase::fromServiceAccount('helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
 $tokenHandler = $firebase->getTokenHandler();
 
