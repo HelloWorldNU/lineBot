@@ -1,8 +1,12 @@
 <?php
 
 include ('verdor/firebase-php/src/Firebase.php');
+   
+$secret = 'aeogVO99vj4QgwyUcR6QXl4OaPEnPB9izi9d9PCa';
+$databaseUri = 'https://helloworld-48dff.firebaseio.com';
 
-$firebase = Firebase::fromServiceAccount('helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
+$firebase = Firebase::fromDatabaseUriAndSecret($databaseUri, $secret);
+
 $database = $firebase->getDatabase();
 
 $newPost = $database
