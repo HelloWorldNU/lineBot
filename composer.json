@@ -1,0 +1,6 @@
+{
+    "require": {
+        "linecorp/line-bot-sdk": "^1.5",
+        "ktamas77/firebase-php": "dev-master"
+    }
+}
