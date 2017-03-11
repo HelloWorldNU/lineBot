@@ -1,10 +1,10 @@
 <?php
 echo "6666";
 include ('vendor/autoload.php');
-   
+echo "5555";
 $secret = 'aeogVO99vj4QgwyUcR6QXl4OaPEnPB9izi9d9PCa';
 $databaseUri = 'https://helloworld-48dff.firebaseio.com';
-
+echo "5555";
 $firebase = Firebase::fromDatabaseUriAndSecret($databaseUri, $secret);
 echo "5555";
 $database = $firebase->getDatabase();
