@@ -1,6 +1,7 @@
 <?php
 
 include ('vendor/autoload.php');
+include ('firebase-php/src/Firebase.php');
 
 use Firebase;
 
