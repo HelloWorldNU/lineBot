@@ -1,7 +1,7 @@
 <?php
 
 include ('vendor/autoload.php');
-include ('firebase-php/src/Firebase.php');
+include ('verdor/firebase-php/src/Firebase.php');
 
 $firebase = Firebase::fromServiceAccount('helloworld-48dff-firebase-adminsdk-zpze8-0bbee8d5ef.json');
 $tokenHandler = $firebase->getTokenHandler();
