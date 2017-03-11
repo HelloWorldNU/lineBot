@@ -1,5 +1,5 @@
 <?php
-
+echo "5555";
 include ('vendor/autoload.php');
    
 $secret = 'aeogVO99vj4QgwyUcR6QXl4OaPEnPB9izi9d9PCa';
@@ -17,7 +17,6 @@ $newPost = $database
     ]);
 
 $newPost->getKey(); // => -KVr5eu8gcTv7_AHb-3-
-echo $newPost->getKey(); 
 $newPost->getUri(); // => https://my-project.firebaseio.com/blog/posts/-KVr5eu8gcTv7_AHb-3-
 
 $newPost->getChild('title')->set('Changed post title');
