@@ -12,7 +12,7 @@ $claims = ['foo' => 'bar']; // optional
 $customToken = $tokenHandler->createCustomToken($uid, $claims);
 echo $token; // "eyJ0eXAiOiJKV1..."
 
-$idTokenString = 'eyJhbGciOiJSUzI1...';
+$idTokenString = $token;
 // Returns a Lcobucci\JWT\Token instance
 $idToken = $tokenHandler->verifyIdToken($idTokenString);
 
